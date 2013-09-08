@@ -20,19 +20,11 @@ class MustacheSampleController extends BaseController {
     {
         // basic settings for rendering a page
         $contents = array(
-            'title'  => 'l4-mustache-h5bp-guzzle',
+            'title'  => 'maimai',
             'menues' => array(
                 array(
-                    'name' => 'Laravel',
-                    'link' => 'http://laravel.com',
-                ),
-                array(
-                    'name' => 'Mustache',
-                    'link' => 'http://mustache.github.io/',
-                ),
-                array(
-                    'name' => 'H5bp',
-                    'link' => 'http://html5boilerplate.com/',
+                    'name' => 'home',
+                    'link' => '/',
                 ),
             ),
             'page'   => array(
@@ -40,6 +32,7 @@ class MustacheSampleController extends BaseController {
                 'description' => 'page-description',
             ),
             'bodyJs' => array(
+                array('path' => 'js/vendor/marked.js'),
                 array('path' => 'js/main.js'),
             ),
         );
@@ -62,14 +55,12 @@ class MustacheSampleController extends BaseController {
             'header' => $data['title-description'],
             'section' => array(
                 $data['headline-body'],
-                $data['headline-body'],
-                $data['headline-body'],
             ),
             'footer' => $data['headline-body'],
             'relation' => array(
                 'aside' => array(
-                    'title'       => 'guzzle',
-                    'description' => 'Guzzle is a PHP HTTP client and framework for building RESTful web service clients http://guzzlephp.org/',
+                    'title'       => 'pocket',
+                    'description' => 'http://getpocket.com/',
                 ),
             ),
         );
