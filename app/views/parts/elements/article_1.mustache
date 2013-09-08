@@ -1,0 +1,45 @@
+<article>
+  {{# header }}
+  <header>
+    {{# title }}
+    <h1>{{ title }}</h1>
+    {{/ title}}
+    {{# description }}
+    <p>{{ description }}</p>
+    {{/ description }}
+  </header>
+  {{/ header }}
+
+  {{# section }}
+  <section>
+    {{# headline }}
+    <h2>{{ headline }}</h2>
+    {{/ headline }}
+    {{# body }}
+    <p>{{ body }}</p>
+    {{/ body }}
+  </section>
+  {{/ section }}
+
+  {{# footer }}
+  <footer>
+    {{# headline }}
+    <h3>{{ headline }}</h3>
+    {{/ headline }}
+    {{# body }}
+    <p>{{ body }}</p>
+    {{/ body }}
+  </footer>
+  {{/ footer }}
+</article>
+
+{{# relation.aside }}
+<aside>
+  {{# title }}
+  <h3>{{ title }}</h3>
+  {{/ title}}
+  {{# description }}
+  <p>{{ description }}</p>
+  {{/ description }}
+</aside>
+{{/ relation.aside }}

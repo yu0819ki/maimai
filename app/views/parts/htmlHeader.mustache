@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta name="viewport" content="width=device-width">
+{{# meta }}
+<meta name="{{ name }}" content="{{ content }}">
+{{/ meta }}
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+{{# css }}
+<link rel="stylesheet" href="{{ path }}">
+{{/ css }}
+
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+{{# headJs }}
+<script src="{{ path }}"></script>
+{{/ headJs }}
