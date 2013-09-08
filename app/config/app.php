@@ -114,7 +114,7 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Conarwelsh\MustacheL4\MustacheL4ServiceProvider',
-        'Yu0819ki/MaimaiModPocket/MaimaiModPocketServiceProvider',
+        'Yu0819ki\MaimaiModPocket\MaimaiModPocketServiceProvider',
     ),
 
     /*
