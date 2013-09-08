@@ -2,11 +2,21 @@
 
 use Guzzle\Http\Client as GuzzleClient;
 
+/**
+ * OAuth Client of Pocket
+ *
+ * @author yu0819ki<yu0819ki@gmail.com>
+ * @package maimai-mod-pocket
+ */
 class Client
 {
+    /** @type string $baseUrl  baseUrl of Pocket API */
     private $baseUrl = 'https://getpocket.com';
+
+    /** @type string $consumerKey  OAuth ConsumerKey property */
     private $consumerKey;
 
+    /** @type array $apiPath  API and Authorize path */
     private static $apiPath = array(
         'authorize'       => '/auth/authorize',
         'getAccessToken'  => '/v3/oauth/authorize',
@@ -14,6 +24,13 @@ class Client
         'retrieve'        => '/v3/get',
     );
 
+    /**
+     * The Constructor
+     *
+     * @param  string $consumerKey  OAuth ConsumerKey
+     * @param  string $baseUrl      baseUrl of Pocket API (Optional)
+     * @return void
+     */
     public function __construct($consumerKey, $baseUrl = null)
     {
         $this->consumerKey = $consumerKey;
@@ -22,6 +39,12 @@ class Client
         }
     }
 
+    /**
+     * Get Request Token
+     *
+     * @param  string $redirectUri  redirect to the uri, after got the token
+     * @return mixed  expects void therefore redirecting
+     */
     public function getRequestToken($redirectUri = null)
     {
         $postBody = array(
@@ -31,6 +54,12 @@ class Client
         return $this->request(array('apiPath' => 'getRequestToken', 'method' => 'post', 'postBody' => $postBody));
     }
 
+    /**
+     * Get Url to Authorize
+     *
+     * @param  string $redirectUri  redirect to the uri, after got the token
+     * @return string a url for authorizing
+     */
     public function getAuthorizeUrl($requestToken, $redirectUri = null)
     {
         $requestQuery = array(
@@ -42,6 +71,12 @@ class Client
         return $uri;
     }
 
+    /**
+     * Get Request Token
+     *
+     * @param  string $code  auth code
+     * @return mixed  expects AccessToken string
+     */
     public function getAccessToken($code)
     {
         $postBody = array(
@@ -102,6 +137,14 @@ class Client
         return $return;
     }
 
+    /**
+     * Get API Path
+     *
+     * @see    self::$apiPath
+     * @param  string $type  api type
+     * @param  mixed  $query any parameters for building query-string to request
+     * @return string api path with query-string
+     */
     public function getApiPath($type, $query = null)
     {
         if (!array_key_exists($type, self::$apiPath)) {
