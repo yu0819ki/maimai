@@ -1,6 +1,8 @@
 <?php namespace Yu0819ki\MaimaiModPocket;
 
 use Guzzle\Http\Client as GuzzleClient;
+use Guzzle\Http\Exception\RequestException;
+use Illuminate\Support\Facades\Log;
 
 /**
  * OAuth Client of Pocket
@@ -125,8 +127,12 @@ class Client
 
         try {
             $response = $request->send();
+        } catch(RequestException $e) {
+            Log::error($e->getMessage());
+            return false;//$e->getMessage();
         } catch(Exception $e) {
-            return $e->getMessage();
+            Log::error($e->getMessage());
+            return false;//$e->getMessage();
         }
 
         try {
