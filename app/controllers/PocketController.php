@@ -14,29 +14,6 @@ class PocketController extends BaseController
     protected $pocketClient;
     protected $authConfig;
 
-    /** @type array $defaultContents  basic settings for rendering a page */
-    protected $defaultContents = array(
-        'title'  => 'maimai',
-        'menues' => array(
-            array(
-                'name' => 'home',
-                'link' => '/',
-            ),
-            array(
-                'name' => 'pocket',
-                'link' => '/pocket',
-            ),
-        ),
-        'page'   => array(
-            'title'       => 'page-title',
-            'description' => 'page-description',
-        ),
-        'bodyJs' => array(
-            array('path' => '/js/vendor/marked.js'),
-            array('path' => '/js/main.js'),
-        ),
-    );
-
     /** @type string $layout  set layout for mustache template */
     public $layout = 'layouts.mustache.master';
 
@@ -54,12 +31,17 @@ class PocketController extends BaseController
      */
     public function index()
     {
+        $this->loadDefaultContents();
+        $this->setPageSettings(array(
+            'title'       => 'Maimai project -- Pocket.index',
+            'description' => '"Maimai project"は、各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために立ち上げたプロジェクトです。',
+        ));
         $contents = $this->defaultContents;
 
         // the data for a part of article
         $article = array(
             'section' => array(
-                array('body' => '[entries](' . URL::to('/pocket/entries') . ')'),
+                array('body' => '* [entries](' . URL::to('/pocket/entries') . ')  ' . "\n" . 'あなたのPocketに保存しているデータを一覧表示します  ' . "\n" . '(**※Pocket認証を要求されます**)'),
             ),
         );
 
@@ -104,6 +86,11 @@ class PocketController extends BaseController
             );
         }
 
+        $this->loadDefaultContents();
+        $this->setPageSettings(array(
+            'title'       => 'Maimai project -- Pocket.entries',
+            'description' => '"Maimai project"は、各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために立ち上げたプロジェクトです。',
+        ));
         $contents = $this->defaultContents;
 
         // the data for a part of article
