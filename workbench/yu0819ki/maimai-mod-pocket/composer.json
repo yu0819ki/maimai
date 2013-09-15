@@ -1,0 +1,24 @@
+{
+    "name": "yu0819ki/maimai-mod-pocket",
+    "description": "",
+    "authors": [
+        {
+            "name": "yu0819ki",
+            "email": "yu0819ki+maimai@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "guzzle/guzzle": "~3.7"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Yu0819ki\\MaimaiModPocket": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
