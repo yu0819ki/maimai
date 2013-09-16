@@ -37,7 +37,7 @@ class BaseController extends Controller
             $defaultContents['og']['image'] = URL::to($defaultContents['og']['image']);
         }
 
-        $this->defaultContents = Config::get('mustache.defaultContents');
+        $this->defaultContents = $defaultContents;
     }
 
     protected function setTitle($title)
