@@ -1,11 +1,5 @@
-@import "scss/colors.scss";
-/* ---- mixin definitions ---- */
-@mixin shadow($offsetX, $offsetY, $color, $blur-radius: 0, $spread-radius: 0)
-{
-    -webkit-box-shadow: $offsetX $offsetY $blur-radius $spread-radius $color;
-       -moz-box-shadow: $offsetX $offsetY $blur-radius $spread-radius $color;
-            box-shadow: $offsetX $offsetY $blur-radius $spread-radius $color;
-}
+@import "compass";
+@import "colors.scss";
 
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
@@ -206,6 +200,7 @@ a {
         margin: 0;
         padding: 10px 2%;
         margin-bottom: 0;
+        @include border-radius(24px 8px 0px 0px);
     }
 
     nav li:first-child a {
@@ -237,7 +232,7 @@ a {
 
     .header-container,
     .main aside {
-        @include shadow(0,5px, $color-shadow, 10px);
+        @include box-shadow(0 5px 10px $color-shadow);
     }
 
 /* ============
@@ -259,6 +254,7 @@ a {
         margin: 0 1.7%;
         padding: 25px 2%;
         margin-bottom: 0;
+        @include border-radius(0px);
     }
 /* ============
     WIDE: Main

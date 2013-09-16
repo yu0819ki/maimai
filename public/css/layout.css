@@ -1,8 +1,8 @@
 /* ---- color definitions ---- */
-/* ---- mixin definitions ---- */
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
+/* line 12, scss/layout.scss */
 html,
 button,
 input,
@@ -11,6 +11,7 @@ textarea {
   color: #004d23;
 }
 
+/* line 16, scss/layout.scss */
 body {
   font-size: 12px;
   line-height: 1.2;
@@ -18,16 +19,19 @@ body {
   font-family: Helvetica, Helvetica Neue, Arial;
 }
 
+/* line 23, scss/layout.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
+/* line 28, scss/layout.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
+/* line 33, scss/layout.scss */
 hr {
   display: block;
   height: 1px;
@@ -37,20 +41,24 @@ hr {
   padding: 0;
 }
 
+/* line 42, scss/layout.scss */
 img {
   vertical-align: middle;
 }
 
+/* line 46, scss/layout.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
+/* line 52, scss/layout.scss */
 textarea {
   resize: vertical;
 }
 
+/* line 56, scss/layout.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #cccccc;
@@ -61,6 +69,7 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
+/* line 68, scss/layout.scss */
 .wrapper {
   width: 90%;
   margin: 0 5%;
@@ -69,21 +78,25 @@ textarea {
 /* ===================
     ALL: Orange Theme
    =================== */
+/* line 77, scss/layout.scss */
 .header-container {
   border-bottom: 20px solid #b34b00;
 }
 
+/* line 82, scss/layout.scss */
 .footer-container,
 .main aside {
   border-top: 20px solid #b34b00;
 }
 
+/* line 88, scss/layout.scss */
 .header-container,
 .footer-container,
 .main aside {
   background: #e67e22;
 }
 
+/* line 92, scss/layout.scss */
 .title {
   color: white;
 }
@@ -91,11 +104,13 @@ textarea {
 /* ==============
     MOBILE: Menu
    ============== */
+/* line 100, scss/layout.scss */
 nav ul {
   margin: 0;
   padding: 0;
 }
 
+/* line 105, scss/layout.scss */
 nav a {
   display: block;
   margin-bottom: 10px;
@@ -107,11 +122,13 @@ nav a {
   background: #b34b00;
 }
 
+/* line 119, scss/layout.scss */
 nav a:hover,
 nav a:visited {
   color: white;
 }
 
+/* line 123, scss/layout.scss */
 nav a:hover {
   text-decoration: underline;
 }
@@ -119,19 +136,23 @@ nav a:hover {
 /* ==============
     MOBILE: Main
    ============== */
+/* line 131, scss/layout.scss */
 .main {
   padding: 30px 0;
 }
 
+/* line 135, scss/layout.scss */
 .main article h1 {
   font-size: 1.5em;
 }
 
+/* line 139, scss/layout.scss */
 .main aside {
   color: white;
   padding: 0px 5% 10px;
 }
 
+/* line 144, scss/layout.scss */
 .footer-container footer {
   color: white;
   padding: 20px 0;
@@ -140,6 +161,7 @@ nav a:hover {
 /* ===============
     ALL: IE Fixes
    =============== */
+/* line 153, scss/layout.scss */
 .ie7 .title {
   padding-top: 20px;
 }
@@ -147,22 +169,27 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/* line 161, scss/layout.scss */
 a {
   color: inherit;
 }
 
+/* line 165, scss/layout.scss */
 .footer-container {
   font-size: 8px;
 }
 
+/* line 169, scss/layout.scss */
 .text-left {
   text-align: left;
 }
 
+/* line 172, scss/layout.scss */
 .text-right {
   text-align: right;
 }
 
+/* line 175, scss/layout.scss */
 .text-center {
   text-align: right;
 }
@@ -174,18 +201,26 @@ a {
   /* ====================
       INTERMEDIATE: Menu
      ==================== */
+  /* line 197, scss/layout.scss */
   nav a {
     float: left;
     width: 27%;
     margin: 0;
     padding: 10px 2%;
     margin-bottom: 0;
+    -webkit-border-radius: 24px 8px 0px 0px;
+    -moz-border-radius: 24px 8px 0px 0px;
+    -ms-border-radius: 24px 8px 0px 0px;
+    -o-border-radius: 24px 8px 0px 0px;
+    border-radius: 24px 8px 0px 0px;
   }
 
+  /* line 206, scss/layout.scss */
   nav li:first-child a {
     margin-left: 0;
   }
 
+  /* line 210, scss/layout.scss */
   nav li:last-child a {
     margin-right: 0;
   }
@@ -193,10 +228,12 @@ a {
   /* ========================
       INTERMEDIATE: IE Fixes
      ======================== */
+  /* line 218, scss/layout.scss */
   nav ul li {
     display: inline;
   }
 
+  /* line 222, scss/layout.scss */
   .oldie nav a {
     margin: 0 0.7%;
   }
@@ -205,41 +242,52 @@ a {
   /* ====================
       WIDE: CSS3 Effects
      ==================== */
+  /* line 234, scss/layout.scss */
   .header-container,
   .main aside {
-    -webkit-box-shadow: 0 5px 10px 0 #ccbaad;
-    -moz-box-shadow: 0 5px 10px 0 #ccbaad;
-    box-shadow: 0 5px 10px 0 #ccbaad;
+    -webkit-box-shadow: 0 5px 10px #ccbaad;
+    -moz-box-shadow: 0 5px 10px #ccbaad;
+    box-shadow: 0 5px 10px #ccbaad;
   }
 
   /* ============
       WIDE: Menu
      ============ */
+  /* line 242, scss/layout.scss */
   .title {
     float: left;
   }
 
+  /* line 246, scss/layout.scss */
   nav {
     float: right;
     width: 38%;
   }
 
+  /* line 251, scss/layout.scss */
   nav a {
     float: left;
     width: 27%;
     margin: 0 1.7%;
     padding: 25px 2%;
     margin-bottom: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
   }
 
   /* ============
       WIDE: Main
      ============ */
+  /* line 263, scss/layout.scss */
   .main article {
     float: left;
     width: 57%;
   }
 
+  /* line 268, scss/layout.scss */
   .main aside {
     float: right;
     width: 28%;
@@ -249,6 +297,7 @@ a {
   /* ===============
       Maximal Width
      =============== */
+  /* line 280, scss/layout.scss */
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */
@@ -258,6 +307,7 @@ a {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+/* line 290, scss/layout.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -265,6 +315,7 @@ a {
   *text-indent: -9999px;
 }
 
+/* line 297, scss/layout.scss */
 .ir:before {
   content: "";
   display: block;
@@ -272,11 +323,13 @@ a {
   height: 150%;
 }
 
+/* line 304, scss/layout.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
+/* line 309, scss/layout.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -288,6 +341,7 @@ a {
   width: 1px;
 }
 
+/* line 321, scss/layout.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -298,20 +352,24 @@ a {
   width: auto;
 }
 
+/* line 330, scss/layout.scss */
 .invisible {
   visibility: hidden;
 }
 
+/* line 335, scss/layout.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
+/* line 340, scss/layout.scss */
 .clearfix:after {
   clear: both;
 }
 
+/* line 344, scss/layout.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -320,6 +378,7 @@ a {
    Print styles
    ========================================================================== */
 @media print {
+  /* line 353, scss/layout.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -328,15 +387,18 @@ a {
     text-shadow: none !important;
   }
 
+  /* line 361, scss/layout.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
+  /* line 365, scss/layout.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
+  /* line 369, scss/layout.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -344,28 +406,33 @@ a {
   /*
    * Don't show links for images, or javascript/internal links
    */
+  /* line 379, scss/layout.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
+  /* line 384, scss/layout.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
+  /* line 389, scss/layout.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
+  /* line 394, scss/layout.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
+  /* line 398, scss/layout.scss */
   img {
     max-width: 100% !important;
   }
@@ -374,6 +441,7 @@ a {
     margin: 0.5cm;
 }
 
+  /* line 408, scss/layout.scss */
   p,
   h2,
   h3 {
@@ -381,6 +449,7 @@ a {
     widows: 3;
   }
 
+  /* line 414, scss/layout.scss */
   h2,
   h3 {
     page-break-after: avoid;
