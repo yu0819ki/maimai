@@ -19,10 +19,17 @@ return array(
             'title'       => 'Maimai',
             'description' => '',
         ),
+        'og'     => array(
+            'type'        => 'website',
+            'title'       => 'Maimai',
+            'url'         => '/',
+            'image'       => '/img/logo.png',
+            'description' => ''
+        ),
         'footer' => array(
             'headline'    => '',
             'body'        => 'This project is powered by Laravel framework, Mustache.php(mustache-l4), Guzzle, HTML5 Boilerplate and marked.',
-            'copyright'   => '&copy; 2013 [yu0819ki](https://github.com/yu0819ki)'
+            'copyright'   => '&copy; 2013 [yu0819ki](mailto:yu0819ki+maimai@gmail.com)'
         ),
         'bodyJs' => array(
             array('path' => '/js/vendor/marked.js'),

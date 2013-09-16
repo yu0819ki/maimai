@@ -36,6 +36,7 @@ class HomeController extends BaseController
 
         // プリコンパイル
         $contents['mainContent'] = View::make('parts.elements.article_1', $article);
+        $contents = $this->buildOpenGraphMeta($contents);
 
         // レンダリング
         $this->layout->with($contents);
