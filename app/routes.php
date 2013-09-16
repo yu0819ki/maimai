@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MustacheSampleController@show');
+Route::get('/', 'HomeController@index');
 Route::get('pocket',   'PocketController@index');
 Route::get('pocket/entries', 'PocketController@entries');
 Route::get('auth/pocket',    'PocketController@auth');
