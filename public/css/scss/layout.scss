@@ -1,13 +1,4 @@
-/* ---- color definitions ---- */
-$color-selection: #b3d4fc;
-$color-main: #f16529;
-$color-accent: #e44d26;
-$color-base: #ffffff;
-$color-text-base: #222222;
-$color-text-main: #ffffff;
-$color-text-accent: #ffffff;
-$color-border-hr: #cccccc;
-$color-shadow: #cccccc;
+@import "scss/colors.scss";
 /* ---- mixin definitions ---- */
 @mixin shadow($offsetX, $offsetY, $color, $blur-radius: 0, $spread-radius: 0)
 {
@@ -29,8 +20,9 @@ textarea {
 }
 
 body {
-    font-size: 1em;
+    font-size: 12em;
     line-height: 1.4;
+    background-color: $color-base;
 }
 
 ::-moz-selection {

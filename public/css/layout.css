@@ -8,12 +8,13 @@ button,
 input,
 select,
 textarea {
-  color: #222222;
+  color: #004d23;
 }
 
 body {
-  font-size: 1em;
+  font-size: 12em;
   line-height: 1.4;
+  background-color: #ffffe2;
 }
 
 ::-moz-selection {
@@ -72,18 +73,18 @@ body {
     ALL: Orange Theme
    =================== */
 .header-container {
-  border-bottom: 20px solid #e44d26;
+  border-bottom: 20px solid #b34b00;
 }
 
 .footer-container,
 .main aside {
-  border-top: 20px solid #e44d26;
+  border-top: 20px solid #b34b00;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-  background: #f16529;
+  background: #e67e22;
 }
 
 .title {
@@ -106,7 +107,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  background: #e44d26;
+  background: #b34b00;
 }
 
 nav a:hover,
@@ -193,9 +194,9 @@ a {
      ==================== */
   .header-container,
   .main aside {
-    -webkit-box-shadow: 0 5px 10px 0 #cccccc;
-    -moz-box-shadow: 0 5px 10px 0 #cccccc;
-    box-shadow: 0 5px 10px 0 #cccccc;
+    -webkit-box-shadow: 0 5px 10px 0 #ccbaad;
+    -moz-box-shadow: 0 5px 10px 0 #ccbaad;
+    box-shadow: 0 5px 10px 0 #ccbaad;
   }
 
   /* ============
