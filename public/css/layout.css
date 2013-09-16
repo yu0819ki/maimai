@@ -12,9 +12,10 @@ textarea {
 }
 
 body {
-  font-size: 12em;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.2;
   background-color: #ffffe2;
+  font-family: Helvetica, Helvetica Neue, Arial;
 }
 
 ::-moz-selection {
@@ -60,10 +61,6 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-body {
-  font: 16px/26px Helvetica, Helvetica Neue, Arial;
-}
-
 .wrapper {
   width: 90%;
   margin: 0 5%;
@@ -102,7 +99,7 @@ nav ul {
 nav a {
   display: block;
   margin-bottom: 10px;
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
@@ -127,7 +124,7 @@ nav a:hover {
 }
 
 .main article h1 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .main aside {
@@ -154,6 +151,22 @@ a {
   color: inherit;
 }
 
+.footer-container {
+  font-size: 8px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: right;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -164,8 +177,8 @@ a {
   nav a {
     float: left;
     width: 27%;
-    margin: 0 1.7%;
-    padding: 25px 2%;
+    margin: 0;
+    padding: 10px 2%;
     margin-bottom: 0;
   }
 
@@ -209,6 +222,14 @@ a {
   nav {
     float: right;
     width: 38%;
+  }
+
+  nav a {
+    float: left;
+    width: 27%;
+    margin: 0 1.7%;
+    padding: 25px 2%;
+    margin-bottom: 0;
   }
 
   /* ============
