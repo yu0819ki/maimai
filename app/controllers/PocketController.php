@@ -61,7 +61,7 @@ class PocketController extends BaseController
     public function entries()
     {
         // アクセストークンの取得
-        $accessToken = $this->getAccessToken('pocket', '/pocket/entries');
+        $accessToken = $this->getAccessToken('/pocket/entries');
         if ($accessToken === false) {
             return;
         }
@@ -167,7 +167,7 @@ class PocketController extends BaseController
             if (isset($result['code'])) {
                 $requestToken = $result['code'];
                 Session::put('authorize.pocket.request_token', $requestToken);
-                $redirectUrl  = 'http://maimai.local/auth/pocket';
+                $redirectUrl  = URL::to('/auth/pocket');
                 $authorizeUrl = $this->pocketClient->getAuthorizeUrl($requestToken, $redirectUrl);
                 Redirector::execute($authorizeUrl);
             }
