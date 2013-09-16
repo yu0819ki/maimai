@@ -29,6 +29,14 @@ class BaseController extends Controller
 
     protected function loadDefaultContents($type = null)
     {
+        $defaultContents = Config::get('mustache.defaultContents');
+        if (isset($defaultContents['og']['url'])) {
+            $defaultContents['og']['url'] = URL::to($defaultContents['og']['url']);
+        }
+        if (isset($defaultContents['og']['image'])) {
+            $defaultContents['og']['image'] = URL::to($defaultContents['og']['image']);
+        }
+
         $this->defaultContents = Config::get('mustache.defaultContents');
     }
 
@@ -37,9 +45,35 @@ class BaseController extends Controller
         $this->defaultContents['title'] = $title;
     }
 
+    protected function buildOpenGraphMeta($contents)
+    {
+        if (!isset($contents['og']) || !is_array($contents['og'])) {
+            return $contents;
+        }
+
+        if (!isset($contents['meta']) || !is_array($contents['meta'])) {
+            $contents['meta'] = array();
+        }
+
+        foreach ($contents['og'] as $name => $content) {
+            $contents['meta'][] = array(
+                'name'    => 'og:' . $name,
+                'content' => $content,
+            );
+        }
+
+        return $contents;
+    }
+
     protected function setPageSettings($settings)
     {
         $this->defaultContents['page'] = array_merge($this->defaultContents['page'], $settings);
+        if (isset($settings['title'])) {
+            $this->defaultContents['og']['title'] = $settings['title'];
+        }
+        if (isset($settings['description'])) {
+            $this->defaultContents['og']['description'] = $settings['description'];
+        }
     }
 
 }

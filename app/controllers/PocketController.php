@@ -48,6 +48,7 @@ class PocketController extends BaseController
         // precompile the article as the main content
         $contents['mainContent'] = View::make('parts.elements.article_1', $article);
 
+        $contents = $this->buildOpenGraphMeta($contents);
         // render a page with contents data
         $this->layout->with($contents);
     }
@@ -101,6 +102,7 @@ class PocketController extends BaseController
         // precompile the article as the main content
         $contents['mainContent'] = View::make('parts.elements.article_1', $article);
 
+        $contents = $this->buildOpenGraphMeta($contents);
         // render a page with contents data
         $this->layout->with($contents);
     }
