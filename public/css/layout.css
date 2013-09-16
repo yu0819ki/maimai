@@ -194,6 +194,11 @@ a {
   text-align: right;
 }
 
+/* line 179, scss/layout.scss */
+.main article section {
+  word-wrap: break-word;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -201,7 +206,7 @@ a {
   /* ====================
       INTERMEDIATE: Menu
      ==================== */
-  /* line 197, scss/layout.scss */
+  /* line 201, scss/layout.scss */
   nav a {
     float: left;
     width: 27%;
@@ -215,12 +220,12 @@ a {
     border-radius: 24px 8px 0px 0px;
   }
 
-  /* line 206, scss/layout.scss */
+  /* line 210, scss/layout.scss */
   nav li:first-child a {
     margin-left: 0;
   }
 
-  /* line 210, scss/layout.scss */
+  /* line 214, scss/layout.scss */
   nav li:last-child a {
     margin-right: 0;
   }
@@ -228,12 +233,12 @@ a {
   /* ========================
       INTERMEDIATE: IE Fixes
      ======================== */
-  /* line 218, scss/layout.scss */
+  /* line 222, scss/layout.scss */
   nav ul li {
     display: inline;
   }
 
-  /* line 222, scss/layout.scss */
+  /* line 226, scss/layout.scss */
   .oldie nav a {
     margin: 0 0.7%;
   }
@@ -242,7 +247,7 @@ a {
   /* ====================
       WIDE: CSS3 Effects
      ==================== */
-  /* line 234, scss/layout.scss */
+  /* line 238, scss/layout.scss */
   .header-container,
   .main aside {
     -webkit-box-shadow: 0 5px 10px #ccbaad;
@@ -253,18 +258,18 @@ a {
   /* ============
       WIDE: Menu
      ============ */
-  /* line 242, scss/layout.scss */
+  /* line 246, scss/layout.scss */
   .title {
     float: left;
   }
 
-  /* line 246, scss/layout.scss */
+  /* line 250, scss/layout.scss */
   nav {
     float: right;
     width: 38%;
   }
 
-  /* line 251, scss/layout.scss */
+  /* line 255, scss/layout.scss */
   nav a {
     float: left;
     width: 27%;
@@ -281,13 +286,13 @@ a {
   /* ============
       WIDE: Main
      ============ */
-  /* line 263, scss/layout.scss */
+  /* line 267, scss/layout.scss */
   .main article {
     float: left;
     width: 57%;
   }
 
-  /* line 268, scss/layout.scss */
+  /* line 272, scss/layout.scss */
   .main aside {
     float: right;
     width: 28%;
@@ -297,7 +302,7 @@ a {
   /* ===============
       Maximal Width
      =============== */
-  /* line 280, scss/layout.scss */
+  /* line 284, scss/layout.scss */
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */
@@ -307,7 +312,7 @@ a {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 290, scss/layout.scss */
+/* line 294, scss/layout.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -315,7 +320,7 @@ a {
   *text-indent: -9999px;
 }
 
-/* line 297, scss/layout.scss */
+/* line 301, scss/layout.scss */
 .ir:before {
   content: "";
   display: block;
@@ -323,13 +328,13 @@ a {
   height: 150%;
 }
 
-/* line 304, scss/layout.scss */
+/* line 308, scss/layout.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 309, scss/layout.scss */
+/* line 313, scss/layout.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -341,7 +346,7 @@ a {
   width: 1px;
 }
 
-/* line 321, scss/layout.scss */
+/* line 325, scss/layout.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -352,24 +357,24 @@ a {
   width: auto;
 }
 
-/* line 330, scss/layout.scss */
+/* line 334, scss/layout.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 335, scss/layout.scss */
+/* line 339, scss/layout.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 340, scss/layout.scss */
+/* line 344, scss/layout.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 344, scss/layout.scss */
+/* line 348, scss/layout.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -378,7 +383,7 @@ a {
    Print styles
    ========================================================================== */
 @media print {
-  /* line 353, scss/layout.scss */
+  /* line 357, scss/layout.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -387,18 +392,18 @@ a {
     text-shadow: none !important;
   }
 
-  /* line 361, scss/layout.scss */
+  /* line 365, scss/layout.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 365, scss/layout.scss */
+  /* line 369, scss/layout.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 369, scss/layout.scss */
+  /* line 373, scss/layout.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -406,33 +411,33 @@ a {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 379, scss/layout.scss */
+  /* line 383, scss/layout.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 384, scss/layout.scss */
+  /* line 388, scss/layout.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 389, scss/layout.scss */
+  /* line 393, scss/layout.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 394, scss/layout.scss */
+  /* line 398, scss/layout.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 398, scss/layout.scss */
+  /* line 402, scss/layout.scss */
   img {
     max-width: 100% !important;
   }
@@ -441,7 +446,7 @@ a {
     margin: 0.5cm;
 }
 
-  /* line 408, scss/layout.scss */
+  /* line 412, scss/layout.scss */
   p,
   h2,
   h3 {
@@ -449,7 +454,7 @@ a {
     widows: 3;
   }
 
-  /* line 414, scss/layout.scss */
+  /* line 418, scss/layout.scss */
   h2,
   h3 {
     page-break-after: avoid;
