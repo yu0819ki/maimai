@@ -22,7 +22,7 @@ return array(
         'footer' => array(
             'headline'    => '',
             'body'        => 'This project is powered by Laravel framework, Mustache.php(mustache-l4), Guzzle, HTML5 Boilerplate and marked.',
-            'copyright'   => 'copyright 2013 [yu0819ki](https://github.com/yu0819ki) all rights reserved.'
+            'copyright'   => '&copy; 2013 [yu0819ki](https://github.com/yu0819ki)'
         ),
         'bodyJs' => array(
             array('path' => '/js/vendor/marked.js'),

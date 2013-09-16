@@ -28,8 +28,8 @@ class HomeController extends BaseController
             'section' => array(
                 'headline' => '"Maimai project"について',
                 'body'     =>
-                    '各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために [yu0819ki](https://github.com/yu0819ki) が立ち上げたプロジェクトです。' . "\n\n" .
-                    '現在は [Pocket](http://getpocket.com) のクライアントとして動作します。' . "\n"
+                    '各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために立ち上げたプロジェクトです。' . "\n\n" .
+                    '現在は [Pocket](http://getpocket.com) にのみ対応しています。' . "\n"
                 ,
             ),
         );
