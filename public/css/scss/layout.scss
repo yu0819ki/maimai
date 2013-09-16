@@ -16,7 +16,7 @@ textarea {
 body {
     font-size: 12px;
     line-height: 1.2;
-    background-color: $color-base;
+    background-color: $color-main;
     font-family: Helvetica, Helvetica Neue, Arial;
 }
 
@@ -75,7 +75,7 @@ textarea {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid $color-accent;
+    border-bottom: 10px solid $color-accent;
 }
 
 .footer-container,
@@ -129,7 +129,7 @@ nav a:hover {
    ============== */
 
 .main {
-    padding: 30px 0;
+    padding: 15px 0;
 }
 
 .main article h1 {
@@ -143,7 +143,7 @@ nav a:hover {
 
 .footer-container footer {
     color: $color-text-main;
-    padding: 20px 0;
+    padding: 5px 0;
 }
 
 /* ===============
@@ -157,7 +157,9 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+p {
+    margin: 0.5em 0;
+}
 a {
     color: inherit;
 }
@@ -173,15 +175,25 @@ a {
     text-align: right;
 }
 .text-center {
-    text-align: right;
+    text-align: center;
 }
 
 .main article section {
     word-wrap: break-word;
 }
 
+.main article section h2 {
+    font-size: 1.2em;
+    margin: 1.2em 0 0.3em
+}
 
+.header-container h1 {
+    margin: 10px 0 5px;
+}
 
+.main-container {
+    background-color: $color-base;
+}
 
 
 
@@ -200,7 +212,7 @@ a {
 
     nav a {
         float: left;
-        width: 27%;
+        width: 30%;
         margin: 0;
         padding: 10px 2%;
         margin-bottom: 0;
