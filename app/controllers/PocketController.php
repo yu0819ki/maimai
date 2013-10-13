@@ -42,6 +42,7 @@ class PocketController extends BaseController
         $article = array(
             'section' => array(
                 array('body' => '* [entries](' . URL::to('/pocket/entries') . ')  ' . "\n" . 'あなたのPocketに保存しているデータを一覧表示します  ' . "\n" . '(**※Pocket認証を要求されます**)'),
+                array('body' => '* [registor](' . URL::to('/pocket/registor') . ')  ' . "\n" . 'あなたのPocketにURLを登録します  ' . "\n" . '(**※Pocket認証を要求されます**)'),
             ),
         );
 
@@ -80,9 +81,49 @@ class PocketController extends BaseController
         }
 
         $section = array();
+
+        // 最上段に、登録用フォームを追加
+        $form = array(
+            'method' => 'POST',
+            'action' => '/pocket/registor',
+            'inputs' => array(
+                array(
+                    'type' => array(
+                        'input' => 'text',
+                    ),
+                    'name'  => 'url',
+                    'label' => 'URLをPocketに登録',
+                    'id'    => 'registor_form_input_url',
+                    'class' => '',
+                    'value' => '',
+                ),
+                array(
+                    'type' => array(
+                        'input' => 'submit',
+                    ),
+                    'name'  => '',
+                    'id'    => 'registor_form_submit',
+                    'class' => 'button',
+                    'value' => '送信',
+                ),
+            ),
+            'csrf' =>  Form::token(),
+        );
+        
+        $section[] = array(
+            'body' => View::make('parts.elements.form_1', $form),
+        );
+        
         foreach ($result['list'] as $entry) {
+            if (!isset($entry['resolved_url'])) {
+                continue;
+            }
+            $headline = $entry['resolved_url'];
+            if (isset($entry['resolved_title'])) {
+                $headline = '[' . $entry['resolved_title'] .'](' . $entry['resolved_url'] . ')';
+            }
             $section[] = array(
-                'headline' => '[' . $entry['resolved_title'] .'](' . $entry['resolved_url'] . ')',
+                'headline' => $headline,
                 'body'  => $entry['excerpt'],
             );
         }
@@ -93,6 +134,7 @@ class PocketController extends BaseController
             'description' => '"Maimai project"は、各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために立ち上げたプロジェクトです。',
         ));
         $contents = $this->defaultContents;
+        $contents['css'][] = array('path' => '/css/form.style.css');
 
         // the data for a part of article
         $article = array(
@@ -165,6 +207,7 @@ class PocketController extends BaseController
                         'input' => 'text',
                     ),
                     'name'  => 'url',
+                    'label' => 'URLをPocketに登録',
                     'id'    => 'registor_form_input_url',
                     'class' => '',
                     'value' => '',
