@@ -1,6 +1,6 @@
 <article>
   {{# header }}
-  <header>
+  <header class="{{ class }}">
     {{# title }}
     <h1>{{ title }}</h1>
     {{/ title}}
@@ -11,7 +11,7 @@
   {{/ header }}
 
   {{# section }}
-  <section>
+  <section class="{{ class }}">
     {{# headline }}
     <h2 class="js-md">{{ headline }}</h2>
     {{/ headline }}
@@ -22,7 +22,7 @@
   {{/ section }}
 
   {{# footer }}
-  <footer>
+  <footer class="{{ class }}">
     {{# headline }}
     <h3>{{ headline }}</h3>
     {{/ headline }}
@@ -34,7 +34,7 @@
 </article>
 
 {{# relation.aside }}
-<aside>
+<aside class="{{ class }}">
   {{# title }}
   <h3>{{ title }}</h3>
   {{/ title}}

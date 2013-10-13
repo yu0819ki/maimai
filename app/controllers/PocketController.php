@@ -123,6 +123,7 @@ class PocketController extends BaseController
                 $headline = '[' . $entry['resolved_title'] .'](' . $entry['resolved_url'] . ')';
             }
             $section[] = array(
+                'class' => 'js-external-content-wrapper',
                 'headline' => $headline,
                 'body'  => $entry['excerpt'],
             );
