@@ -1,0 +1,22 @@
+<div class="stylized-form-wrapper">
+<form method="{{ method }}" action="{{ action }}">
+{{{ csrf }}}
+<dl>
+{{# inputs }}
+    {{# label }}
+    <dt><label for="{{ name }}">{{ label }}</label></dt>
+    {{/ label }}
+    {{^ label }}
+    <dt><label for="{{ name }}">{{ name }}</label></dt>
+    {{/ label }}
+
+    {{# type.textarea }}
+    <dd class="{{dd.class}}"><textarea name="{{ name }}"  id="{{ id }}" class="{{ class }}">{{ value }}</textarea></dd>
+    {{/ type.textarea }}
+    {{# type.input }}
+    <dd class="{{dd.class}}"><input type="{{ type.input }}" name="{{ name }}"  id="{{ id }}" class="{{ class }}" value="{{ value }}"></dd>
+    {{/ type.input }}
+{{/ inputs }}
+</dl>
+</form>
+</div>

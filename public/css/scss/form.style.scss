@@ -1,0 +1,39 @@
+@import "compass";
+@import "colors.scss";
+
+/* ----------- stylized ----------- */
+.stylized-form-wrapper dt,
+.stylized-form-wrapper dd {
+    margin: 0;
+}
+
+.stylized-form-wrapper label {
+    display: block;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    color: $color-accent
+}
+
+.stylized-form-wrapper input,
+.stylized-form-wrapper textarea {
+    width: 80%;
+    background: $color-form-base;
+    @include border-radius(5px);
+    border: 1px solid $color-main;
+    padding: 0.3em;
+    margin-top: 0.5em;
+    color: $color-form-text-base;
+}
+
+.stylized-form-wrapper input.button {
+    width: auto;
+    background: $color-main;
+    border-color: $color-accent;
+    color: $color-text-main;
+    padding: 0.5em 2em;
+}
+
+.stylized-form-wrapper input:focus,
+.stylized-form-wrapper textarea:focus {
+    border:1px solid #97d6eb;
+}

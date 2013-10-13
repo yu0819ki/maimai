@@ -1,0 +1,46 @@
+/* ---- color definitions ---- */
+/* ----------- stylized ----------- */
+/* line 6, scss/form.style.scss */
+.stylized-form-wrapper dt,
+.stylized-form-wrapper dd {
+  margin: 0;
+}
+
+/* line 10, scss/form.style.scss */
+.stylized-form-wrapper label {
+  display: block;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  color: #b34b00;
+}
+
+/* line 18, scss/form.style.scss */
+.stylized-form-wrapper input,
+.stylized-form-wrapper textarea {
+  width: 80%;
+  background: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e67e22;
+  padding: 0.3em;
+  margin-top: 0.5em;
+  color: #222222;
+}
+
+/* line 28, scss/form.style.scss */
+.stylized-form-wrapper input.button {
+  width: auto;
+  background: #e67e22;
+  border-color: #b34b00;
+  color: white;
+  padding: 0.5em 2em;
+}
+
+/* line 37, scss/form.style.scss */
+.stylized-form-wrapper input:focus,
+.stylized-form-wrapper textarea:focus {
+  border: 1px solid #97d6eb;
+}

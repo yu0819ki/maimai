@@ -24,6 +24,7 @@ class Client
         'getAccessToken'  => '/v3/oauth/authorize',
         'getRequestToken' => '/v3/oauth/request',
         'retrieve'        => '/v3/get',
+        'add'             => '/v3/add',
     );
 
     /**
