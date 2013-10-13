@@ -108,6 +108,94 @@ class PocketController extends BaseController
     }
 
     /**
+     * PocketにURLを登録する
+     *
+     * @param  void
+     * @return void
+     */
+    public function registor()
+    {
+        // POST経由のURL入力があれば、仮保存し、なければ仮保存したものを復帰する
+        $url = Input::getMethod() === 'POST' ? Input::get('url') : null;
+        if (!empty($url)) {
+            Session::put('temporary.pocket.registor.url', $url);
+        } elseif(Session::has('temporary.pocket.registor.url')) {
+            $url = Session::get('temporary.pocket.registor.url');
+        }
+
+        // アクセストークンの取得
+        $accessToken = $this->getAccessToken('/pocket/registor');
+        if ($accessToken === false) {
+            return;
+        }
+
+        // URL指定があれば登録処理
+        if (!empty($url)) {
+            Session::forget('temporary.pocket.registor.url');
+            $postBody = array(
+                'consumer_key' => $this->authConfig['consumerKey'],
+                'access_token' => $accessToken,
+                'url'   => $url,
+            );
+            $result = $this->pocketClient->request(array('apiPath' => 'add', 'method' => 'post', 'postBody' => $postBody));
+            if (!isset($result['item'])) {
+                // 登録処理に失敗
+                App::abort('403', 'Forbidden');
+            } else {
+                // リストにリダイレクト
+                Redirector::execute('/pocket/entries');
+            }
+        }
+
+        $this->loadDefaultContents();
+        $this->setPageSettings(array(
+            'title'       => 'Maimai project -- Pocket.registor',
+            'description' => '"Maimai project"は、各種Webサービスからいろいろな情報を取り込むことを目的としたWebサービスを作るために立ち上げたプロジェクトです。',
+        ));
+        $contents = $this->defaultContents;
+        $contents['css'][] = array('path' => '/css/form.style.css');
+
+        // the data for a part of article
+        $form = array(
+            'method' => 'POST',
+            'action' => '/pocket/registor',
+            'inputs' => array(
+                array(
+                    'type' => array(
+                        'input' => 'text',
+                    ),
+                    'name'  => 'url',
+                    'id'    => 'registor_form_input_url',
+                    'class' => '',
+                    'value' => '',
+                ),
+                array(
+                    'type' => array(
+                        'input' => 'submit',
+                    ),
+                    'name'  => '',
+                    'id'    => 'registor_form_submit',
+                    'class' => 'button',
+                    'value' => '送信',
+                ),
+            ),
+            'csrf' =>  Form::token(),
+        );
+
+        // precompile the article as the main content
+
+        $article = array(
+            'section' => array(
+                'body' => View::make('parts.elements.form_1', $form),
+            )
+        );
+        $contents['mainContent'] = View::make('parts.elements.article_1', $article);
+        $contents = $this->buildOpenGraphMeta($contents);
+        // render a page with contents data
+        $this->layout->with($contents);
+    }
+
+    /**
      * 認証起点
      *
      * @param  void

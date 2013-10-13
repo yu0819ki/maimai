@@ -14,4 +14,14 @@
 Route::get('/', 'HomeController@index');
 Route::get('pocket',   'PocketController@index');
 Route::get('pocket/entries', 'PocketController@entries');
+Route::get('pocket/registor', 'PocketController@registor');
+// Route::post('pocket/registor', 'PocketController@registor');
+
+Route::post('pocket/registor', 
+    array(
+        'uses'   => 'PocketController@registor',
+        'before' => 'csrf', 
+    )
+);
+
 Route::get('auth/pocket',    'PocketController@auth');
